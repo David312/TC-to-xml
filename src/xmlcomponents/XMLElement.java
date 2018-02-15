@@ -1,6 +1,6 @@
 package xmlcomponents;
 
-import xmlcomponents.text.XMLTextInterface;
+import xmlcomponents.text.XMLText;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import java.util.List;
 public abstract class XMLElement implements XMLElementInterface{
     protected String name = "";
     protected List<XMLElementInterface> children = null;
-    protected XMLTextInterface text = null;
+    protected XMLText text = null;
 
     public XMLElement(String name){
         this.name = name;
@@ -40,7 +40,7 @@ public abstract class XMLElement implements XMLElementInterface{
     }
 
     @Override
-    public void setText(XMLTextInterface text) {
+    public void setText(XMLText text) {
         this.text = text;
     }
 }

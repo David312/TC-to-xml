@@ -1,18 +1,16 @@
 package xmlcomponents.text;
 
-public abstract class XMLText implements XMLTextInterface {
+public abstract class XMLText {
     private String text;
 
     public XMLText(String text){
         this.text = text + "\n";
     }
 
-    @Override
     public String getText(){
         return this.text;
     }
 
-    @Override
     public void setText(String text){
         this.text = text + "\n";
     }
