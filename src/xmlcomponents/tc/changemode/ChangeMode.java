@@ -1,7 +1,7 @@
 package xmlcomponents.tc.changemode;
 
 import xmlcomponents.ElementsNames;
-import xmlcomponents.OperatingModes;
+import xmlcomponents.enumerates.OperatingModes;
 import xmlcomponents.XMLElement;
 
 public class ChangeMode extends XMLElement {

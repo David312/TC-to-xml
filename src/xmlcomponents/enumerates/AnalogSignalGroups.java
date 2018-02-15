@@ -1,4 +1,4 @@
-package xmlcomponents;
+package xmlcomponents.enumerates;
 
 public enum AnalogSignalGroups {
     BATTERY_TEMPERATURES("BATTERYTEMPERATURES"),

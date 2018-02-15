@@ -1,4 +1,55 @@
 package gui.controllers;
 
-public class CreateOpenLink {
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import xmlcomponents.TCFactory;
+import xmlcomponents.XMLElement;
+
+public class CreateOpenLink implements DialogController{
+    @FXML
+    private TextField visibilityField;
+
+    @FXML
+    private Button addBtn;
+    @FXML
+    private Button cancelBtn;
+
+    private Stage dialogStage;
+    private XMLElement root;
+
+    public void setDialogStage(Stage s){
+        this.dialogStage = s;
+    }
+
+    public void setXMLRoot(XMLElement root){
+        this.root = root;
+    }
+
+    @FXML
+    private void handleCancel(){
+        this.dialogStage.close();
+    }
+    @FXML
+    private void handleAdd(){
+        try {
+            this.root.appendChild(
+                    TCFactory.newOpenLink(
+                            visibilityField.getText()
+                    )
+            );
+            this.dialogStage.close();
+            return;
+        } catch (Exception e){
+            e.printStackTrace();
+            showErrorDialog();
+        }
+    }
+
+    private void showErrorDialog() {
+        // TODO: implement method
+    }
+
+
 }

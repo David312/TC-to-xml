@@ -7,6 +7,6 @@ public class TCFactory {
     private TCFactory(){}
 
     public static XMLElement newOpenLink(String duration){
-        return new OpenLink(duration);
+        return new TCElement(new OpenLink(duration));
     }
 }

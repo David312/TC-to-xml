@@ -29,4 +29,8 @@ public enum Telecommands {
     public StringProperty nameProperty() {
         return name;
     }
+
+    public String getTelecommand(){
+        return name.get();
+    }
 }

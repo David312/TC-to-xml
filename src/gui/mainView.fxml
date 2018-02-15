@@ -21,7 +21,7 @@
                             <TableColumn fx:id="telecommandsColumn" prefWidth="249.0" resizable="false" text="Telecommand" />
                           </columns>
                         </TableView>
-                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="518.0" text="Add selected TC" />
+                        <Button fx:id="addBtn" mnemonicParsing="false" onAction="#handleAdd" prefHeight="25.0" prefWidth="518.0" text="Add selected TC" />
                      </children>
                   </VBox>
                </children>

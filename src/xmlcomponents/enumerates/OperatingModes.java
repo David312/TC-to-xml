@@ -1,4 +1,4 @@
-package xmlcomponents;
+package xmlcomponents.enumerates;
 
 import xmlcomponents.text.OperatingMode;
 

@@ -23,7 +23,9 @@ public class Main extends Application {
         controller.setMainApp(this);
     }
 
-
+    public Stage getPrimaryStage(){
+        return this.primaryStage;
+    }
     public static void main(String[] args) {
         launch(args);
     }

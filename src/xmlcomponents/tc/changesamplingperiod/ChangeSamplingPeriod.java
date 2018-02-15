@@ -1,6 +1,6 @@
 package xmlcomponents.tc.changesamplingperiod;
 
-import xmlcomponents.AnalogSignalGroups;
+import xmlcomponents.enumerates.AnalogSignalGroups;
 import xmlcomponents.ElementsNames;
 import xmlcomponents.XMLElement;
 

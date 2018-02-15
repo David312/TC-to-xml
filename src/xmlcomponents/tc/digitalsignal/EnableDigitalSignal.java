@@ -1,7 +1,7 @@
 package xmlcomponents.tc.digitalsignal;
 
 import xmlcomponents.ElementsNames;
-import xmlcomponents.StatusSignals;
+import xmlcomponents.enumerates.StatusSignals;
 import xmlcomponents.XMLElement;
 
 public class EnableDigitalSignal extends XMLElement {

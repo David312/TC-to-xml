@@ -28,7 +28,7 @@ public abstract class XMLElement implements XMLElementInterface{
             representation += e.toXMLString();
         if(this.text != null)
             representation += this.text.getText();
-        representation += "<" + this.name + "/>\n";
+        representation += "</" + this.name + ">\n";
         return representation;
     }
 

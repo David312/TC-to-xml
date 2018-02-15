@@ -1,4 +1,4 @@
-package xmlcomponents;
+package xmlcomponents.enumerates;
 
 public enum StatusSignals {
     DAS_P3V("DAS_P3V"),
