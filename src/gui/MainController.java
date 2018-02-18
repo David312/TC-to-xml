@@ -65,6 +65,9 @@ public class MainController {
             case SET_LOST_COMM_TIMER:
                 location += "createSetLostCommTimer";
                 break;
+            case CHANGE_MODE:
+                location += "createChangeMode";
+                break;
             default:
                 throw new IllegalArgumentException("Telecommand not found");
         }

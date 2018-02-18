@@ -7,6 +7,6 @@ import xmlcomponents.XMLElement;
 public class ChangeMode extends XMLElement {
     public ChangeMode(OperatingModes newMode){
         super(ElementsNames.CHANGE_MODE_ELEMENT);
-
+        this.appendChild(new NewMode(newMode));
     }
 }
