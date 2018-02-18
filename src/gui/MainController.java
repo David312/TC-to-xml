@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import xmlcomponents.CommandsElement;
@@ -28,6 +29,9 @@ public class MainController {
 
     @FXML
     private Button addBtn;
+
+    @FXML
+    private Text outputText;
 
     private Main mainApp;
     private XMLElement rootElement;
@@ -58,6 +62,9 @@ public class MainController {
             case OPENLINK:
                 location += "createOpenLink";
                 break;
+            case SET_LOST_COMM_TIMER:
+                location += "createSetLostCommTimer";
+                break;
             default:
                 throw new IllegalArgumentException("Telecommand not found");
         }
@@ -70,7 +77,7 @@ public class MainController {
         loader.setLocation(getClass().getResource(location));
         Parent root = loader.load();
         Stage dialogStage = new Stage();
-        dialogStage.setTitle("New "+title);
+        dialogStage.setTitle("New " + title);
         dialogStage.setScene(new Scene(root));
         dialogStage.initOwner(mainApp.getPrimaryStage());
         dialogStage.initModality(Modality.WINDOW_MODAL);
@@ -79,8 +86,11 @@ public class MainController {
         controller.setXMLRoot(this.rootElement);
         controller.setDialogStage(dialogStage);
         dialogStage.showAndWait();
-        // TODO: delete the following line, it is just for debugging
-        System.out.println(this.rootElement.toXMLString());
+        updateOutputText();
+    }
+
+    private void updateOutputText(){
+        this.outputText.setText(this.rootElement.toXMLString(0));
     }
 
     public void setMainApp(Main mainApp){
@@ -89,5 +99,6 @@ public class MainController {
         this.mainApp = mainApp;
         this.table.setItems(l);
         this.rootElement = new CommandsElement();
+        updateOutputText();
     }
 }

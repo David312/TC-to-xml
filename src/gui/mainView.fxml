@@ -16,10 +16,13 @@
                <children>
                   <VBox prefHeight="398.0" prefWidth="250.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <TableView fx:id="table" prefHeight="380.0" prefWidth="250.0">
+                        <TableView fx:id="table" prefHeight="380.0" prefWidth="250.0" scaleShape="false">
                           <columns>
                             <TableColumn fx:id="telecommandsColumn" prefWidth="249.0" resizable="false" text="Telecommand" />
                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
                         </TableView>
                         <Button fx:id="addBtn" mnemonicParsing="false" onAction="#handleAdd" prefHeight="25.0" prefWidth="518.0" text="Add selected TC" />
                      </children>
@@ -28,7 +31,15 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
                <children>
-                  <TextFlow layoutX="27.0" layoutY="61.0" prefHeight="373.0" prefWidth="342.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ScrollPane prefHeight="373.0" prefWidth="342.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <TextFlow prefHeight="373.0" prefWidth="342.0">
+                           <children>
+                              <Text fx:id="outputText" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="343.13671875" />
+                           </children>
+                        </TextFlow>
+                     </content>
+                  </ScrollPane>
                </children>
             </AnchorPane>
         </items>

@@ -16,7 +16,7 @@ public class Main extends Application {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("mainView.fxml"));
         Parent root = loader.load();
-        primaryStage.setTitle("UPMSat 2 XML Generator");
+        primaryStage.setTitle("UPMSat2 XML Generator");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
         MainController controller = loader.getController();

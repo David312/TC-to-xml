@@ -7,10 +7,10 @@ import javafx.stage.Stage;
 import xmlcomponents.TCFactory;
 import xmlcomponents.XMLElement;
 
-public class CreateOpenLink implements DialogController{
-    @FXML
-    private TextField visibilityField;
+public class CreateSetLostCommTimer implements DialogController{
 
+    @FXML
+    private TextField input;
     @FXML
     private Button addBtn;
     @FXML
@@ -22,26 +22,10 @@ public class CreateOpenLink implements DialogController{
     @FXML
     private void initialize(){}
 
-    public void setDialogStage(Stage s){
-        this.dialogStage = s;
-    }
-
-    public void setXMLRoot(XMLElement root){
-        this.root = root;
-    }
-
-    @FXML
-    private void handleCancel(){
-        this.dialogStage.close();
-    }
     @FXML
     private void handleAdd(){
         try {
-            this.root.appendChild(
-                    TCFactory.newOpenLink(
-                            visibilityField.getText()
-                    )
-            );
+            this.root.appendChild(TCFactory.newSetLostCommTimer(input.getText()));
             this.dialogStage.close();
         } catch (Exception e){
             e.printStackTrace();
@@ -50,8 +34,20 @@ public class CreateOpenLink implements DialogController{
     }
 
     private void showErrorDialog() {
-        // TODO: implement method
     }
 
+    @FXML
+    private void handleCancel(){
+        this.dialogStage.close();
+    }
 
+    @Override
+    public void setDialogStage(Stage s) {
+        this.dialogStage = s;
+    }
+
+    @Override
+    public void setXMLRoot(XMLElement root) {
+        this.root = root;
+    }
 }
