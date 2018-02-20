@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -44,6 +45,12 @@ public class MainController {
     }
 
     @FXML
+    private void handleDoubleClick(MouseEvent e){
+        if(e.getClickCount() == 2)
+            handleAdd();
+    }
+
+    @FXML
     private void handleAdd(){
         Telecommands t = table.getSelectionModel().getSelectedItem();
         System.out.println(t.toString());
@@ -67,6 +74,15 @@ public class MainController {
                 break;
             case CHANGE_MODE:
                 location += "createChangeMode";
+                break;
+            case CHANGE_SAMPLING_PERIOD:
+                location += "createChangeSamplingPeriod";
+                break;
+            case ENABLE_DIGITAL_SIGNAL:
+                location += "createEnableDigitalSignal";
+                break;
+            case DISABLE_DIGITAL_SIGNAL:
+                location += "createDisableDigitalSignal";
                 break;
             default:
                 throw new IllegalArgumentException("Telecommand not found");

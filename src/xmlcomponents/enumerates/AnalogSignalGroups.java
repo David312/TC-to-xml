@@ -1,5 +1,7 @@
 package xmlcomponents.enumerates;
 
+import xmlcomponents.text.AnalogSignalGroup;
+
 public enum AnalogSignalGroups {
     BATTERY_TEMPERATURES("BATTERYTEMPERATURES"),
     BATTERY_VOLTAGES("BATTERYVOLTAGES"),
@@ -28,5 +30,13 @@ public enum AnalogSignalGroups {
     @Override
     public String toString(){
         return this.name;
+    }
+
+    public static AnalogSignalGroups toEnum(String s){
+        for(AnalogSignalGroups g: AnalogSignalGroups.values()){
+            if(g.toString().equals(s))
+                return g;
+        }
+        throw new IllegalArgumentException();
     }
 }
