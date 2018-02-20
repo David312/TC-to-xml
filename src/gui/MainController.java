@@ -84,6 +84,12 @@ public class MainController {
             case DISABLE_DIGITAL_SIGNAL:
                 location += "createDisableDigitalSignal";
                 break;
+            case CHANGE_ADCS_CALIBRATION_PARAMETERS:
+                location += "createChangeADCSCalibrationParameters";
+                break;
+            case CHANGE_ADCS_CONTROLLER_PARAMETERS:
+                location += "createChangeADCSControllerParameters";
+                break;
             default:
                 throw new IllegalArgumentException("Telecommand not found");
         }

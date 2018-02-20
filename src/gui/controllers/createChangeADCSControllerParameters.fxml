@@ -7,8 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="279.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="279.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controllers.CreateChangeADCSControllerParameters">
    <bottom>
       <HBox alignment="BOTTOM_RIGHT" prefHeight="35.0" prefWidth="600.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
@@ -58,12 +57,12 @@
                   <CheckBox mnemonicParsing="false" selected="true" text="MGT_Z" GridPane.rowIndex="2" />
                </children>
             </GridPane>
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField text="-0.1" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField text="2.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField text="8.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField text="15.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
          </children>
       </GridPane>
    </center>
