@@ -6,6 +6,7 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import java.util.ArrayList?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="724.0" prefWidth="482.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controllers.CreateChangeADCSCalibrationParameters">
    <center>
@@ -35,9 +36,9 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <CheckBox alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" selected="true" text="MGM1" />
-                  <CheckBox mnemonicParsing="false" selected="true" text="MGM2" GridPane.columnIndex="1" />
-                  <CheckBox mnemonicParsing="false" text="MGM3" GridPane.columnIndex="2" />
+                  <CheckBox fx:id="mm_working1" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" selected="true" text="MGM1" />
+                  <CheckBox fx:id="mm_working2" mnemonicParsing="false" selected="true" text="MGM2" GridPane.columnIndex="1" />
+                  <CheckBox fx:id="mm_working3" mnemonicParsing="false" text="MGM3" GridPane.columnIndex="2" />
                </children>
             </GridPane>
             <Label text="Calibration Matrix MGM1:" GridPane.rowIndex="1" />
@@ -48,9 +49,9 @@
             <Label text="Calibration Offset MGM3:" GridPane.rowIndex="6" />
             <GridPane alignment="CENTER" hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="254.0" vgap="10.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <children>
-                  <TextField text="2.5332" />
-                  <TextField text="2.4915" GridPane.columnIndex="2" />
-                  <TextField text="2.5200" GridPane.columnIndex="1" />
+                  <TextField fx:id="co1_00" text="2.5332" />
+                  <TextField fx:id="co1_02" text="2.4915" GridPane.columnIndex="2" />
+                  <TextField fx:id="co1_01" text="2.5200" GridPane.columnIndex="1" />
                </children>
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="75.0" />
@@ -63,9 +64,9 @@
             </GridPane>
             <GridPane alignment="CENTER" hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="254.0" vgap="10.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <children>
-                  <TextField text="2.5348" />
-                  <TextField text="2.4664" GridPane.columnIndex="2" />
-                  <TextField text="2.5260" GridPane.columnIndex="1" />
+                  <TextField fx:id="co2_00" text="2.5348" />
+                  <TextField fx:id="co2_02" text="2.4664" GridPane.columnIndex="2" />
+                  <TextField fx:id="co2_01" text="2.5260" GridPane.columnIndex="1" />
                </children>
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="75.0" />
@@ -78,9 +79,9 @@
             </GridPane>
             <GridPane alignment="CENTER" hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="254.0" vgap="10.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <children>
-                  <TextField text="0.0008" />
-                  <TextField text="0.0007" GridPane.columnIndex="2" />
-                  <TextField text="-0.0006" GridPane.columnIndex="1" />
+                  <TextField fx:id="co3_00" text="0.0008" />
+                  <TextField fx:id="co3_02" text="0.0007" GridPane.columnIndex="2" />
+                  <TextField fx:id="co3_01" text="-0.0006" GridPane.columnIndex="1" />
                </children>
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="75.0" />
@@ -93,15 +94,15 @@
             </GridPane>
             <GridPane alignment="CENTER" hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="87.0" prefWidth="254.0" vgap="10.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <TextField text="764.0" />
-                  <TextField text="219.0" GridPane.columnIndex="2" />
-                  <TextField text="25026.0" GridPane.columnIndex="1" />
-                  <TextField text="1299.0" GridPane.rowIndex="2" />
-                  <TextField text="1088.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField text="-416.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField text="-27723.0" GridPane.rowIndex="1" />
-                  <TextField text="-239.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <TextField text="-23472.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <TextField fx:id="cm1_00" text="764.0" />
+                  <TextField fx:id="cm1_02" text="219.0" GridPane.columnIndex="2" />
+                  <TextField fx:id="cm1_01" text="25026.0" GridPane.columnIndex="1" />
+                  <TextField fx:id="cm1_20" text="1299.0" GridPane.rowIndex="2" />
+                  <TextField fx:id="cm1_11" text="1088.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="cm1_21" text="-416.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="cm1_10" text="-27723.0" GridPane.rowIndex="1" />
+                  <TextField fx:id="cm1_12" text="-239.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <TextField fx:id="cm1_22" text="-23472.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                </children>
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="75.0" />
@@ -116,15 +117,15 @@
             </GridPane>
             <GridPane alignment="CENTER" hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="87.0" prefWidth="254.0" vgap="10.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <children>
-                  <TextField text="-1261.0" />
-                  <TextField text="-43.0" GridPane.columnIndex="2" />
-                  <TextField text="-26308.0" GridPane.columnIndex="1" />
-                  <TextField text="2693.0" GridPane.rowIndex="2" />
-                  <TextField text="-42.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField text="458.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField text="27799.0" GridPane.rowIndex="1" />
-                  <TextField text="-95.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <TextField text="-24088.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <TextField fx:id="cm2_00" text="-1261.0" />
+                  <TextField fx:id="cm2_02" text="-43.0" GridPane.columnIndex="2" />
+                  <TextField fx:id="cm2_01" text="-26308.0" GridPane.columnIndex="1" />
+                  <TextField fx:id="cm2_20" text="2693.0" GridPane.rowIndex="2" />
+                  <TextField fx:id="cm2_11" text="-42.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="cm2_21" text="458.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="cm2_10" text="27799.0" GridPane.rowIndex="1" />
+                  <TextField fx:id="cm2_12" text="-95.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <TextField fx:id="cm2_22" text="-24088.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                </children>
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="75.0" />
@@ -139,15 +140,15 @@
             </GridPane>
             <GridPane alignment="CENTER" hgap="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="87.0" prefWidth="254.0" vgap="10.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <children>
-                  <TextField text="9988.0" />
-                  <TextField text="0.0" GridPane.columnIndex="2" />
-                  <TextField text="0.0" GridPane.columnIndex="1" />
-                  <TextField text="0.0" GridPane.rowIndex="2" />
-                  <TextField text="9989.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField text="0.0" GridPane.rowIndex="1" />
-                  <TextField text="0.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <TextField text="10036.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <TextField fx:id="cm3_00" text="9988.0" />
+                  <TextField fx:id="cm3_02" text="0.0" GridPane.columnIndex="2" />
+                  <TextField fx:id="cm3_01" text="0.0" GridPane.columnIndex="1" />
+                  <TextField fx:id="cm3_20" text="0.0" GridPane.rowIndex="2" />
+                  <TextField fx:id="cm3_11" text="9989.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="cm3_21" text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="cm3_10" text="0.0" GridPane.rowIndex="1" />
+                  <TextField fx:id="cm3_12" text="0.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <TextField fx:id="cm3_22" text="10036.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                </children>
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="75.0" />
@@ -172,12 +173,88 @@
    <bottom>
       <HBox alignment="BOTTOM_RIGHT" prefHeight="44.0" prefWidth="461.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" text="Add TC" />
-            <Button mnemonicParsing="false" text="Cancel" />
+            <Button fx:id="addBtn" mnemonicParsing="false" onAction="#handleAdd" text="Add TC" />
+            <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
          </children>
       </HBox>
    </bottom>
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
    </padding>
+
+   <!-- The following defines must be commented if you want to open this file with SceneBuilder -->
+   <fx:define>
+      <ArrayList fx:id="MGM_Working">
+         <fx:reference source="mm_working1"/>
+         <fx:reference source="mm_working2"/>
+         <fx:reference source="mm_working3"/>
+      </ArrayList>
+   </fx:define>
+
+   <fx:define>
+      <ArrayList fx:id="CM_MGM1">
+         <fx:reference source="cm1_00"/>
+         <fx:reference source="cm1_01"/>
+         <fx:reference source="cm1_02"/>
+         <fx:reference source="cm1_10"/>
+         <fx:reference source="cm1_11"/>
+         <fx:reference source="cm1_12"/>
+         <fx:reference source="cm1_20"/>
+         <fx:reference source="cm1_21"/>
+         <fx:reference source="cm1_22"/>
+      </ArrayList>
+   </fx:define>
+
+   <fx:define>
+      <ArrayList fx:id="CM_MGM2">
+         <fx:reference source="cm2_00"/>
+         <fx:reference source="cm2_01"/>
+         <fx:reference source="cm2_02"/>
+         <fx:reference source="cm2_10"/>
+         <fx:reference source="cm2_11"/>
+         <fx:reference source="cm2_12"/>
+         <fx:reference source="cm2_20"/>
+         <fx:reference source="cm2_21"/>
+         <fx:reference source="cm2_22"/>
+      </ArrayList>
+   </fx:define>
+
+   <fx:define>
+      <ArrayList fx:id="CM_MGM3">
+         <fx:reference source="cm3_00"/>
+         <fx:reference source="cm3_01"/>
+         <fx:reference source="cm3_02"/>
+         <fx:reference source="cm3_10"/>
+         <fx:reference source="cm3_11"/>
+         <fx:reference source="cm3_12"/>
+         <fx:reference source="cm3_20"/>
+         <fx:reference source="cm3_21"/>
+         <fx:reference source="cm3_22"/>
+      </ArrayList>
+   </fx:define>
+
+   <fx:define>
+      <ArrayList fx:id="CO_MGM1">
+         <fx:reference source="co1_00"/>
+         <fx:reference source="co1_01"/>
+         <fx:reference source="co1_02"/>
+      </ArrayList>
+   </fx:define>
+
+   <fx:define>
+      <ArrayList fx:id="CO_MGM2">
+         <fx:reference source="co2_00"/>
+         <fx:reference source="co2_01"/>
+         <fx:reference source="co2_02"/>
+      </ArrayList>
+   </fx:define>
+
+   <fx:define>
+      <ArrayList fx:id="CO_MGM3">
+         <fx:reference source="co3_00"/>
+         <fx:reference source="co3_01"/>
+         <fx:reference source="co3_02"/>
+      </ArrayList>
+   </fx:define>
+
 </BorderPane>
