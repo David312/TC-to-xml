@@ -14,8 +14,8 @@ public class Axis extends XMLElement {
 
     public Axis(String value, String axis) {
         super(axis + ElementsNames.AXIS_ELEMENT);
-        if(!axis.equals(x) || !axis.equals(y) || !axis.equals(z)
-                || !value.equals(TRUE_VALUE) || !value.equals(FALSE_VALUE))
+        if(!axis.equals(x) && !axis.equals(y) && !axis.equals(z)
+                && !value.equals(TRUE_VALUE) && !value.equals(FALSE_VALUE))
             throw new IllegalArgumentException();
 
         this.setText(new ADCSParameter(value));

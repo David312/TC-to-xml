@@ -11,8 +11,8 @@
    <bottom>
       <HBox alignment="BOTTOM_RIGHT" prefHeight="35.0" prefWidth="600.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" text="Add TC" />
-            <Button mnemonicParsing="false" text="Cancel" />
+            <Button fx:id="addBtn" mnemonicParsing="false" onAction="#handleAdd" text="Add TC" />
+            <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
          </children>
       </HBox>
    </bottom>
@@ -52,18 +52,35 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <CheckBox mnemonicParsing="false" selected="true" text="MGT_X" />
-                  <CheckBox mnemonicParsing="false" selected="true" text="MGT_Y" GridPane.rowIndex="1" />
-                  <CheckBox mnemonicParsing="false" selected="true" text="MGT_Z" GridPane.rowIndex="2" />
+                  <CheckBox mnemonicParsing="false" selected="true" text="MGT_X" fx:id="x_axis" />
+                  <CheckBox fx:id="y_axis" mnemonicParsing="false" selected="true" text="MGT_Y" GridPane.rowIndex="1" />
+                  <CheckBox fx:id="z_axis" mnemonicParsing="false" selected="true" text="MGT_Z" GridPane.rowIndex="2" />
                </children>
             </GridPane>
-            <TextField text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField text="-0.1" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField text="2.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField text="8.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <TextField text="15.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextField fx:id="omega_tx" text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="omega_ty" text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="omega_tz" text="-0.1" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="k_pb" text="2.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="k_pe" text="8.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="m_m" text="15.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
          </children>
       </GridPane>
    </center>
+
+    <!-- The following defines must be commented if you want to open this file with SceneBuilder -->
+    <fx:define>
+        <ArrayList fx:id="MGT_Working">
+            <fx:reference source="x_axis"/>
+            <fx:reference source="y_axis"/>
+            <fx:reference source="z_axis"/>
+        </ArrayList>
+    </fx:define>
+    <fx:define>
+        <ArrayList fx:id="omega">
+            <fx:reference source="omega_tx"/>
+            <fx:reference source="omega_ty"/>
+            <fx:reference source="omega_tz"/>
+        </ArrayList>
+    </fx:define>
+
 </BorderPane>

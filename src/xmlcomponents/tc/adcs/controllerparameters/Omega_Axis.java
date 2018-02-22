@@ -10,8 +10,8 @@ public class Omega_Axis extends XMLElement {
     public static final String z = "z";
 
     public Omega_Axis(String value, String axis) {
-        super(axis + ElementsNames.OMEGA_AXIS_ELEMENT);
-        if(!axis.equals(x) || !axis.equals(y) || !axis.equals(z))
+        super(ElementsNames.OMEGA_AXIS_ELEMENT + axis);
+        if(!axis.equals(x) && !axis.equals(y) && !axis.equals(z))
             throw new IllegalArgumentException();
 
         this.setText(new AngularVelocity(value));

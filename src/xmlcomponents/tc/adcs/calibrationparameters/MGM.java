@@ -10,6 +10,9 @@ public class MGM extends XMLElement {
 
     public MGM(String value, int n) {
         super(ElementsNames.MGM_ELEMENT + n);
+        if(n < 1 || n > 3)
+            throw new IllegalArgumentException();
+
         Double.parseDouble(value);
         this.setText(new ADCSParameter(value));
     }
