@@ -37,9 +37,22 @@ public class ElementsNames {
 
     // ChangeADCSCalibrationParameters children
     public static final String CALIBRATION_PARAMETERS_ELEMENT = "calibration_parameters";
+    public static final String MM_WORKING_ELEMENT = "mm_working";
+    public static final String MGM_ELEMENT = "mgm";
+    public static final String CALIBRATION_MATRIX_ELEMENT = "cm_mm0";
+    public static final String CALIBRATION_OFFSET_ELEMENT = "co_mm0";
+    public static final String VALUE_ELEMENT = "value";
+    public static final String OFFSET_ELEMENT = "offset";
 
     // ChangeADCSControllerParameters children
     public static final String CONTROLLER_PARAMETERS_ELEMENT = "controller_parameters";
+    public static final String K_PB_ELEMENT = "k_pb";
+    public static final String K_PE_ELEMENT = "k_pe";
+    public static final String MT_WORKING_ELEMENT = "mt_working";
+    public static final String OMEGA_ELEMENT = "omega";
+    public static final String M_M_ELEMENT = "m_m";
+    public static final String OMEGA_AXIS_ELEMENT = "omega_t";
+    public static final String AXIS_ELEMENT = "_axis";
 
     // StartRWExperiment children
     public static final String RW_START_TIME_ELEMENT = "start_time";
@@ -52,6 +65,7 @@ public class ElementsNames {
     public static final String MTS_START_TIME_ELEMENT = "start_time";
     public static final String MTS_EXPERIMENT_DURATION_ELEMENT = "experiment_duration";
     public static final String MTS_EXPERIMENT_MTS_PARAMETERS_ELEMENT = "experiment_mts_parameters";
+
 
 
     private ElementsNames(){}

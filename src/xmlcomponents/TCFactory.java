@@ -3,6 +3,9 @@ package xmlcomponents;
 import xmlcomponents.enumerates.AnalogSignalGroups;
 import xmlcomponents.enumerates.OperatingModes;
 import xmlcomponents.enumerates.StatusSignals;
+import xmlcomponents.tc.adcs.ChangeADCSCalibrationParameters;
+import xmlcomponents.tc.adcs.ChangeADCSControllerParameters;
+import xmlcomponents.tc.adcs.calibrationparameters.CalibrationParameters;
 import xmlcomponents.tc.changemode.ChangeMode;
 import xmlcomponents.tc.changesamplingperiod.ChangeSamplingPeriod;
 import xmlcomponents.tc.digitalsignal.DisableDigitalSignal;
@@ -11,7 +14,12 @@ import xmlcomponents.tc.openlink.OpenLink;
 import xmlcomponents.tc.openlink.VisibilityDuration;
 import xmlcomponents.tc.setlostcommtimer.SetLostCommTimer;
 
+import java.util.List;
+
 public class TCFactory {
+    public static String TRUE_VALUE = CalibrationParameters.TRUE_VALUE;
+    public static String FALSE_VALUE = CalibrationParameters.FALSE_VALUE;
+
     private TCFactory(){}
 
     public static XMLElement newOpenLink(String duration){
@@ -37,5 +45,13 @@ public class TCFactory {
 
     public static XMLElement newDisableDigitalSignal(StatusSignals s){
         return new TCElement(new DisableDigitalSignal(s));
+    }
+
+    public static XMLElement newChangeADCSCalibrationParameters(List<List<String>> parameters){
+        return new TCElement(new ChangeADCSCalibrationParameters(parameters));
+    }
+
+    public static XMLElement newChangeADCSControllerParameters(List<List<String>> parameters){
+        return new TCElement(new ChangeADCSControllerParameters(parameters));
     }
 }

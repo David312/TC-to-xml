@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="TC-to-xml">
+    <output-path>$PROJECT_DIR$/out/artifacts/TC_to_xml</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="gui.Main" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="UPMSat2 XML Generator" />
+        <option name="vendor" value="David Herrero Sanchez" />
+        <option name="version" value="0.1" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="TC_to_xml.jar">
+        <element id="module-output" name="TC-to-xml" />
+      </element>
+    </root>
+  </artifact>
+</component>

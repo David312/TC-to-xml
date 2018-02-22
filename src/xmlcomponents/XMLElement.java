@@ -23,17 +23,24 @@ public abstract class XMLElement implements XMLElementInterface{
 
     @Override
     public String toXMLString(int depth) {
+        // TODO: clean code
         String indentation = "";
         for (int i = 0; i < depth; i++)
             indentation += "  ";
 
-        String representation = indentation + "<" + this.name + ">\n";
+        String representation = indentation + "<" + this.name + ">";
+        if(this.text == null)
+            representation += "\n";
         for(XMLElementInterface e: this.children)
             representation += e.toXMLString(depth + 1);
 
         if(this.text != null)
-            representation += indentation + "  " + this.text.getText();
-        representation += indentation + "</" + this.name + ">\n";
+            representation += this.text.getText();
+
+        if(this.text == null)
+            representation += indentation;
+
+        representation += "</" + this.name + ">\n";
         return representation;
     }
 
