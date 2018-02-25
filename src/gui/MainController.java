@@ -90,6 +90,9 @@ public class MainController {
             case CHANGE_ADCS_CONTROLLER_PARAMETERS:
                 location += "createChangeADCSControllerParameters";
                 break;
+            case START_RW_EXPERIMENT:
+                location +="createStartRWExperiment";
+                break;
             default:
                 throw new IllegalArgumentException("Telecommand not found");
         }

@@ -2,6 +2,7 @@ package xmlcomponents;
 
 import xmlcomponents.enumerates.AnalogSignalGroups;
 import xmlcomponents.enumerates.OperatingModes;
+import xmlcomponents.enumerates.RWTestTypes;
 import xmlcomponents.enumerates.StatusSignals;
 import xmlcomponents.tc.adcs.ChangeADCSCalibrationParameters;
 import xmlcomponents.tc.adcs.ChangeADCSControllerParameters;
@@ -13,6 +14,8 @@ import xmlcomponents.tc.digitalsignal.EnableDigitalSignal;
 import xmlcomponents.tc.openlink.OpenLink;
 import xmlcomponents.tc.openlink.VisibilityDuration;
 import xmlcomponents.tc.setlostcommtimer.SetLostCommTimer;
+import xmlcomponents.tc.startrwexperiment.StartRWExperiment;
+
 
 import java.util.List;
 
@@ -53,5 +56,9 @@ public class TCFactory {
 
     public static XMLElement newChangeADCSControllerParameters(List<List<String>> parameters){
         return new TCElement(new ChangeADCSControllerParameters(parameters));
+    }
+
+    public static XMLElement newStartRWExperiment(RWTestTypes test, String parameter){
+        return new TCElement(new StartRWExperiment(test, parameter));
     }
 }

@@ -18,6 +18,7 @@ public class ElementsNames {
     public static final String CHANGE_ADCS_CALIBRATION_PARAMETERS_ELEMENT = "change_adcs_calibration_parameters";
     public static final String CHANGE_ADCS_CONTROLLER_PARAMETERS_ELEMENT = "change_adcs_controller_parameters";
     public static final String START_RW_EXPERIMENT_ELEMENT = "start_rw_experiment";
+    public static final String START_MTS_EXPERIMENT_ELEMENT = "start_mts_experiment";
 
     // Openlink children
     public static final String VISIBILITY_DURATION_ELEMENT = "visibility_duration";
@@ -55,14 +56,13 @@ public class ElementsNames {
     public static final String AXIS_ELEMENT = "_axis";
 
     // StartRWExperiment children
-    public static final String RW_START_TIME_ELEMENT = "start_time";
-    public static final String RW_EXPERIMENT_DURATION_ELEMENT = "experiment_duration";
-    public static final String RW_CURRENT_ELEMENT = "current";
-    public static final String RW_SPEED_ELEMENT = "speed";
-    public static final String RW_TORQUE_ELEMENT = "torque";
+    //public static final String RW_START_TIME_ELEMENT = "start_time"; // Deprecated
+    //public static final String RW_EXPERIMENT_DURATION_ELEMENT = "experiment_duration"; // Deprecated
+    public static final String RW_EXPERIMENT_TEST = "test";
+    public static final String RW_EXPERIMENT_TEST_PARAMETER = "test_parameter";
 
     // StartMTSExperiment children
-    public static final String MTS_START_TIME_ELEMENT = "start_time";
+    //public static final String MTS_START_TIME_ELEMENT = "start_time"; // Deprecated
     public static final String MTS_EXPERIMENT_DURATION_ELEMENT = "experiment_duration";
     public static final String MTS_EXPERIMENT_MTS_PARAMETERS_ELEMENT = "experiment_mts_parameters";
 

@@ -10,7 +10,7 @@ public class MGM extends XMLElement {
 
     public MGM(String value, int n) {
         super(ElementsNames.MGM_ELEMENT + n);
-        if(n < 1 || n > 3)
+        if(n < 1 || n > 3 || (!value.equals(TRUE_VALUE) && !value.equals(FALSE_VALUE)))
             throw new IllegalArgumentException();
 
         Double.parseDouble(value);
