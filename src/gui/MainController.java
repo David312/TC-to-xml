@@ -8,17 +8,19 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import xmlcomponents.CommandsElement;
 import xmlcomponents.XMLElement;
 
-import java.io.IOException;
+import java.io.*;
 
 
 public class MainController {
@@ -61,6 +63,60 @@ public class MainController {
                 e.printStackTrace();
             }
         }
+    }
+
+    @FXML
+    private void saveToFile(){
+        File f;
+        Stage saveFileStage = new Stage();
+
+        FileChooser fc = new FileChooser();
+        FileChooser.ExtensionFilter ef =
+                new FileChooser.ExtensionFilter("XML Files (*.xml)", "*.xml");
+        fc.getExtensionFilters().add(ef);
+        fc.setTitle("Save File as...");
+
+        f = fc.showSaveDialog(saveFileStage);
+        if(f != null){
+            try {
+                if(f.createNewFile()){
+                    String xmlHeader = "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>";
+                    String xmlBody = this.rootElement.toXMLString(0);
+                    BufferedWriter outFile = new BufferedWriter(new FileWriter(f));
+                    outFile.write(xmlHeader,0,xmlHeader.length());
+                    outFile.newLine();
+                    outFile.write(xmlBody,0,xmlBody.length());
+                    outFile.close();
+                }
+            }catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    @FXML
+    private void closeApp(){
+        mainApp.getPrimaryStage().close();
+    }
+
+    @FXML
+    private void newXML(){
+        this.rootElement = new CommandsElement();
+        updateOutputText();
+    }
+
+    @FXML
+    private void showAbout(){
+        Alert info = new Alert(Alert.AlertType.INFORMATION);
+        info.setTitle("UPMSat2 XML creator");
+        info.setHeaderText(null);
+        info.setContentText("This application generates a valid XML document that can be used " +
+                "to test the UPMSat2's OBC.\n\n" +
+                "Made by David Herrero Sánchez. \n" +
+                "Intern working in the UPMSat2 project at ETSIINF-UPM (Universidad Politécnica de Madrid).\n\n" +
+                "Github: https://github.com/David312");
+
+        info.showAndWait();
     }
 
     private void showNewTCDialog(Telecommands t) throws IOException{
