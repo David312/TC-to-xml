@@ -112,8 +112,8 @@ public class MainController {
         info.setHeaderText(null);
         info.setContentText("This application generates a valid XML document that can be used " +
                 "to test the UPMSat2's OBC.\n\n" +
-                "Made by David Herrero Sánchez. \n" +
-                "Intern working in the UPMSat2 project at ETSIINF-UPM (Universidad Politécnica de Madrid).\n\n" +
+                "Made by David Herrero Sánchez, the intern working in \n" +
+                "the UPMSat2 project at ETSIINF-UPM (Universidad Politécnica de Madrid).\n\n" +
                 "Github: https://github.com/David312");
 
         info.showAndWait();
@@ -148,6 +148,9 @@ public class MainController {
                 break;
             case START_RW_EXPERIMENT:
                 location +="createStartRWExperiment";
+                break;
+            case START_MTS_EXPERIMENT:
+                location += "createStartMTSExperiment";
                 break;
             default:
                 throw new IllegalArgumentException("Telecommand not found");

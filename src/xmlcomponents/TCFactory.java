@@ -14,6 +14,7 @@ import xmlcomponents.tc.digitalsignal.EnableDigitalSignal;
 import xmlcomponents.tc.openlink.OpenLink;
 import xmlcomponents.tc.openlink.VisibilityDuration;
 import xmlcomponents.tc.setlostcommtimer.SetLostCommTimer;
+import xmlcomponents.tc.startmtsexperiment.StartMTSExperiment;
 import xmlcomponents.tc.startrwexperiment.StartRWExperiment;
 
 
@@ -60,5 +61,9 @@ public class TCFactory {
 
     public static XMLElement newStartRWExperiment(RWTestTypes test, String parameter){
         return new TCElement(new StartRWExperiment(test, parameter));
+    }
+
+    public static XMLElement newStartMTSExperiment(List<String> parameters){
+        return new TCElement(new StartMTSExperiment(parameters));
     }
 }
