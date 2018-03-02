@@ -2,6 +2,7 @@ package gui;
 
 import gui.controllers.DialogController;
 import gui.models.Telecommands;
+import gui.utils.Utils;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -60,7 +61,7 @@ public class MainController {
             try {
                 showNewTCDialog(t);
             }catch (Exception e){
-                e.printStackTrace();
+                Utils.AlertUser(e.getMessage());
             }
         }
     }
@@ -89,6 +90,8 @@ public class MainController {
                     outFile.close();
                 }
             }catch (IOException e) {
+                Utils.AlertUser(e.getMessage());
+            }catch (Exception e){
                 e.printStackTrace();
             }
         }

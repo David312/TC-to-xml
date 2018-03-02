@@ -1,5 +1,6 @@
 package gui.controllers;
 
+import gui.utils.Utils;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -37,9 +38,15 @@ public class CreateStartRWExperiment implements DialogController {
 
     @FXML
     private void handleAdd(){
-        RWTestTypes test = RWTestTypes.valueOf(choice.getSelectionModel().getSelectedItem());
-        this.root.appendChild(TCFactory.newStartRWExperiment(test, this.parameter.getText()));
-        this.dialogStage.close();
+        try {
+            RWTestTypes test = RWTestTypes.valueOf(choice.getSelectionModel().getSelectedItem());
+            this.root.appendChild(TCFactory.newStartRWExperiment(test, this.parameter.getText()));
+            this.dialogStage.close();
+        }catch (IllegalArgumentException e){
+            Utils.AlertUser(e.getMessage());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
 

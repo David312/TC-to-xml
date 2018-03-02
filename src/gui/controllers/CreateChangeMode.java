@@ -1,5 +1,6 @@
 package gui.controllers;
 
+import gui.utils.Utils;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -37,9 +38,10 @@ public class CreateChangeMode implements DialogController{
             OperatingModes m = OperatingModes.valueOf(this.choice.getValue());
             this.root.appendChild(TCFactory.newChangeMode(m));
             this.dialogStage.close();
+        }catch (IllegalArgumentException e){
+            Utils.AlertUser(e.getMessage());
         }catch (Exception e){
             e.printStackTrace();
-            showErrorDialog();
         }
     }
 

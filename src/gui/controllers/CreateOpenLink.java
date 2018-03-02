@@ -1,5 +1,6 @@
 package gui.controllers;
 
+import gui.utils.Utils;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -43,9 +44,10 @@ public class CreateOpenLink implements DialogController{
                     )
             );
             this.dialogStage.close();
-        } catch (Exception e){
+        } catch (IllegalArgumentException e){
+            Utils.AlertUser(e.getMessage());
+        }catch (Exception e){
             e.printStackTrace();
-            showErrorDialog();
         }
     }
 

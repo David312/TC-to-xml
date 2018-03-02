@@ -1,5 +1,6 @@
 package gui.controllers;
 
+import gui.utils.Utils;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -97,8 +98,14 @@ public class CreateChangeADCSCalibrationParameters implements DialogController{
 
     @FXML
     private void handleAdd(){
-        this.root.appendChild(TCFactory.newChangeADCSCalibrationParameters(collectParameters()));
-        this.dialogStage.close();
+        try{
+            this.root.appendChild(TCFactory.newChangeADCSCalibrationParameters(collectParameters()));
+            this.dialogStage.close();
+        }catch (IllegalArgumentException e){
+            Utils.AlertUser(e.getMessage());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     @FXML

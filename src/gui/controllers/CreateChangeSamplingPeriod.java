@@ -1,5 +1,6 @@
 package gui.controllers;
 
+import gui.utils.Utils;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -39,9 +40,10 @@ public class CreateChangeSamplingPeriod implements DialogController {
             AnalogSignalGroups g = AnalogSignalGroups.toEnum(this.choice.getValue());
             this.root.appendChild(TCFactory.newChangeSamplingPeriod(g,this.period.getText()));
             this.dialogStage.close();
+        }catch (IllegalArgumentException e){
+            Utils.AlertUser(e.getMessage());
         }catch (Exception e){
             e.printStackTrace();
-            showErrorDialog();
         }
     }
 

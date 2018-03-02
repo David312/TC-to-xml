@@ -1,5 +1,6 @@
 package gui.controllers;
 
+import gui.utils.Utils;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -49,8 +50,14 @@ public class CreateStartMTSExperiment implements DialogController{
         for(CheckBox c: reserved)
             parameters.add(Boolean.toString(c.isSelected()));
 
-        this.root.appendChild(TCFactory.newStartMTSExperiment(parameters));
-        this.dialogStage.close();
+        try{
+            this.root.appendChild(TCFactory.newStartMTSExperiment(parameters));
+            this.dialogStage.close();
+        }catch (IllegalArgumentException e){
+            Utils.AlertUser(e.getMessage());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     @FXML

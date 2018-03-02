@@ -9,6 +9,6 @@ public class ChangeSamplingPeriod extends XMLElement {
                                 String newPeriod){
         super(ElementsNames.CHANGE_SAMPLING_PERIOD_ELEMENT);
         this.appendChild(new SignalsToChangePeriod(signalsToChange));
-
+        this.appendChild(new NewPeriod(newPeriod));
     }
 }

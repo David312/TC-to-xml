@@ -1,5 +1,6 @@
 package gui.controllers;
 
+import gui.utils.Utils;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -27,9 +28,10 @@ public class CreateSetLostCommTimer implements DialogController{
         try {
             this.root.appendChild(TCFactory.newSetLostCommTimer(input.getText()));
             this.dialogStage.close();
-        } catch (Exception e){
+        }catch (IllegalArgumentException e){
+            Utils.AlertUser(e.getMessage());
+        }catch (Exception e){
             e.printStackTrace();
-            showErrorDialog();
         }
     }
 
