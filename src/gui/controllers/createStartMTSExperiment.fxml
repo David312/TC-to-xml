@@ -19,8 +19,8 @@
    <center>
       <GridPane BorderPane.alignment="CENTER">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="130.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="434.0" minWidth="10.0" prefWidth="292.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="285.0" minWidth="10.0" prefWidth="99.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="434.0" minWidth="10.0" prefWidth="323.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints maxHeight="81.0" minHeight="10.0" prefHeight="64.0" vgrow="SOMETIMES" />
@@ -30,7 +30,7 @@
             <RowConstraints maxHeight="144.0" minHeight="10.0" prefHeight="57.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Experiment Duration:" />
+            <Label text="TC Orbit:" />
             <Label text="Command:" GridPane.rowIndex="3" />
             <TextField fx:id="duration" text="0" GridPane.columnIndex="1" />
             <ChoiceBox fx:id="choices" prefHeight="25.0" prefWidth="317.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />

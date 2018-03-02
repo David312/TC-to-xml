@@ -16,7 +16,7 @@ public class StartMTSExperiment extends XMLElement {
             throw new IllegalArgumentException();
 
         int i = 0;
-        this.appendChild(new ExperimentDuration(parameters.get(i++)));
+        this.appendChild(new TCOrbit(parameters.get(i++)));
 
         this.appendChild(new MTS_T(Boolean.parseBoolean(parameters.get(i++)),1));
         this.appendChild(new MTS_T(Boolean.parseBoolean(parameters.get(i++)),2));

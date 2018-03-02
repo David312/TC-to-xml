@@ -63,7 +63,7 @@ public class ElementsNames {
 
     // StartMTSExperiment children
     //public static final String MTS_START_TIME_ELEMENT = "start_time"; // Deprecated
-    public static final String MTS_EXPERIMENT_DURATION_ELEMENT = "experiment_duration";
+    public static final String MTS_TC_ORBIT_ELEMENT = "tc_orbit";
     public static final String MTS_T_ELEMENT = "mts_t";
     public static final String MTS_HEATER_ELEMENT = "heater_";
     public static final String MTS_COMMAND_ELEMENT = "command";
