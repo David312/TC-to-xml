@@ -1,5 +1,6 @@
 package xmlcomponents.tc.startmtsexperiment;
 
+import xmlcomponents.DueTime;
 import xmlcomponents.ElementsNames;
 import xmlcomponents.XMLElement;
 import xmlcomponents.enumerates.EssayCommands;
@@ -10,10 +11,12 @@ public class StartMTSExperiment extends XMLElement {
 
     private static final int PARAMETERS_LENGTH = 14;
 
-    public StartMTSExperiment(List<String> parameters) {
+    public StartMTSExperiment(String time, List<String> parameters) {
         super(ElementsNames.START_MTS_EXPERIMENT_ELEMENT);
         if(parameters == null || parameters.size() != PARAMETERS_LENGTH)
             throw new IllegalArgumentException();
+
+        this.setAttribute(new DueTime(time));
 
         int i = 0;
         this.appendChild(new TCOrbit(parameters.get(i++)));

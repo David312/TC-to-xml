@@ -15,6 +15,8 @@ import java.util.List;
 
 public class CreateChangeADCSCalibrationParameters implements DialogController{
     @FXML
+    private TextField dueTime;
+    @FXML
     private List<TextField> CM_MGM1;
     @FXML
     private List<TextField> CM_MGM2;
@@ -99,7 +101,10 @@ public class CreateChangeADCSCalibrationParameters implements DialogController{
     @FXML
     private void handleAdd(){
         try{
-            this.root.appendChild(TCFactory.newChangeADCSCalibrationParameters(collectParameters()));
+            this.root.appendChild(TCFactory.newChangeADCSCalibrationParameters(
+                    dueTime.getText(),
+                    collectParameters()
+            ));
             this.dialogStage.close();
         }catch (IllegalArgumentException e){
             Utils.AlertUser(e.getMessage());

@@ -26,14 +26,17 @@
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="41.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="64.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="63.0" minHeight="10.0" prefHeight="47.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="RW Test:" />
-            <Label text="RW Test Parameter (optional):" GridPane.rowIndex="1" />
-            <ChoiceBox fx:id="choice" prefHeight="25.0" prefWidth="219.0" GridPane.columnIndex="1" />
-            <TextField fx:id="parameter" text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="RW Test:" GridPane.rowIndex="1" />
+            <Label text="RW Test Parameter (optional):" GridPane.rowIndex="2" />
+            <ChoiceBox fx:id="choice" prefHeight="25.0" prefWidth="219.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="parameter" text="0.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Due Time:" />
+            <TextField fx:id="dueTime" text="0" GridPane.columnIndex="1" />
          </children>
       </GridPane>
    </center>

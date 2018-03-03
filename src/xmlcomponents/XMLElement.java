@@ -8,6 +8,7 @@ import java.util.List;
 public abstract class XMLElement implements XMLElementInterface{
     protected String name = "";
     protected List<XMLElementInterface> children = null;
+    protected XMLAttribute attr = null;
     protected XMLText text = null;
 
     public XMLElement(String name){
@@ -28,7 +29,11 @@ public abstract class XMLElement implements XMLElementInterface{
         for (int i = 0; i < depth; i++)
             indentation += "  ";
 
-        String representation = indentation + "<" + this.name + ">";
+        String representation = indentation + "<" + this.name;
+        if(this.attr != null)
+            representation += " " + this.attr.toString();
+        representation += ">";
+
         if(this.text == null)
             representation += "\n";
         for(XMLElementInterface e: this.children)
@@ -54,5 +59,10 @@ public abstract class XMLElement implements XMLElementInterface{
     @Override
     public void setText(XMLText text) {
         this.text = text;
+    }
+
+    @Override
+    public void setAttribute(XMLAttribute attr){
+        this.attr = attr;
     }
 }

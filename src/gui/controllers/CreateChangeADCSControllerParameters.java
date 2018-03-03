@@ -15,6 +15,8 @@ import java.util.List;
 
 public class CreateChangeADCSControllerParameters implements DialogController{
     @FXML
+    private TextField dueTime;
+    @FXML
     private List<CheckBox> MGT_Working;
     @FXML
     private TextField k_pb;
@@ -78,7 +80,10 @@ public class CreateChangeADCSControllerParameters implements DialogController{
     @FXML
     private void handleAdd(){
         try{
-            this.root.appendChild(TCFactory.newChangeADCSControllerParameters(collectParameters()));
+            this.root.appendChild(TCFactory.newChangeADCSControllerParameters(
+                    dueTime.getText(),
+                    collectParameters()
+            ));
             this.dialogStage.close();
         }catch (IllegalArgumentException e){
             Utils.AlertUser(e.getMessage());

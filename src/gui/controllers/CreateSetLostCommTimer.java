@@ -9,6 +9,8 @@ import xmlcomponents.TCFactory;
 import xmlcomponents.XMLElement;
 
 public class CreateSetLostCommTimer implements DialogController{
+    @FXML
+    private TextField dueTime;
 
     @FXML
     private TextField input;
@@ -26,7 +28,7 @@ public class CreateSetLostCommTimer implements DialogController{
     @FXML
     private void handleAdd(){
         try {
-            this.root.appendChild(TCFactory.newSetLostCommTimer(input.getText()));
+            this.root.appendChild(TCFactory.newSetLostCommTimer(dueTime.getText(),input.getText()));
             this.dialogStage.close();
         }catch (IllegalArgumentException e){
             Utils.AlertUser(e.getMessage());

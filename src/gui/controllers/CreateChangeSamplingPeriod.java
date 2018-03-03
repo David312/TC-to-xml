@@ -14,6 +14,8 @@ import xmlcomponents.enumerates.AnalogSignalGroups;
 
 public class CreateChangeSamplingPeriod implements DialogController {
     @FXML
+    private TextField dueTime;
+    @FXML
     private ChoiceBox<String> choice;
     @FXML
     private TextField period;
@@ -38,7 +40,7 @@ public class CreateChangeSamplingPeriod implements DialogController {
     private void handleAdd(){
         try {
             AnalogSignalGroups g = AnalogSignalGroups.toEnum(this.choice.getValue());
-            this.root.appendChild(TCFactory.newChangeSamplingPeriod(g,this.period.getText()));
+            this.root.appendChild(TCFactory.newChangeSamplingPeriod(dueTime.getText(),g,this.period.getText()));
             this.dialogStage.close();
         }catch (IllegalArgumentException e){
             Utils.AlertUser(e.getMessage());

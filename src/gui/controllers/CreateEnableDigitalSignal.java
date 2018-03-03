@@ -6,12 +6,15 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import xmlcomponents.TCFactory;
 import xmlcomponents.XMLElement;
 import xmlcomponents.enumerates.StatusSignals;
 
 public class CreateEnableDigitalSignal implements DialogController{
+    @FXML
+    private TextField dueTime;
     @FXML
     private ChoiceBox<String> choice;
 
@@ -35,7 +38,7 @@ public class CreateEnableDigitalSignal implements DialogController{
     private void handleAdd(){
         try {
             StatusSignals s = StatusSignals.valueOf(this.choice.getValue());
-            this.root.appendChild(TCFactory.newEnableDigitalSignal(s));
+            this.root.appendChild(TCFactory.newEnableDigitalSignal(dueTime.getText(),s));
             this.dialogStage.close();
         }catch (IllegalArgumentException e){
             Utils.AlertUser(e.getMessage());

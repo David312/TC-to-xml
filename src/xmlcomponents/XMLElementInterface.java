@@ -7,4 +7,5 @@ public interface XMLElementInterface {
     public void appendChild(XMLElementInterface e);
     public String getText();
     public void setText(XMLText text);
+    public void setAttribute(XMLAttribute attr);
 }

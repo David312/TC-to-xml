@@ -6,6 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import xmlcomponents.TCFactory;
 import xmlcomponents.XMLElement;
@@ -13,6 +14,8 @@ import xmlcomponents.enumerates.OperatingModes;
 
 
 public class CreateChangeMode implements DialogController{
+    @FXML
+    private TextField dueTime;
     @FXML
     private ChoiceBox<String> choice;
 
@@ -36,7 +39,7 @@ public class CreateChangeMode implements DialogController{
     private void handleAdd(){
         try {
             OperatingModes m = OperatingModes.valueOf(this.choice.getValue());
-            this.root.appendChild(TCFactory.newChangeMode(m));
+            this.root.appendChild(TCFactory.newChangeMode(dueTime.getText(),m));
             this.dialogStage.close();
         }catch (IllegalArgumentException e){
             Utils.AlertUser(e.getMessage());

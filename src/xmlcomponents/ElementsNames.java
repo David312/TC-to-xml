@@ -1,7 +1,9 @@
 package xmlcomponents;
 
 public class ElementsNames {
-    public static final String _ELEMENT = "";
+    // due time attribute
+    public static final String DUE_TIME_ATTRIBUTE = "due_time";
+
     // root element
     public static final String COMMANDS_ELEMENT = "commands";
 

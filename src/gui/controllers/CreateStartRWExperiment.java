@@ -14,7 +14,8 @@ import xmlcomponents.enumerates.RWTestTypes;
 
 
 public class CreateStartRWExperiment implements DialogController {
-
+    @FXML
+    private TextField dueTime;
     @FXML
     private ChoiceBox<String> choice;
     @FXML
@@ -40,7 +41,7 @@ public class CreateStartRWExperiment implements DialogController {
     private void handleAdd(){
         try {
             RWTestTypes test = RWTestTypes.valueOf(choice.getSelectionModel().getSelectedItem());
-            this.root.appendChild(TCFactory.newStartRWExperiment(test, this.parameter.getText()));
+            this.root.appendChild(TCFactory.newStartRWExperiment(dueTime.getText(),test, this.parameter.getText()));
             this.dialogStage.close();
         }catch (IllegalArgumentException e){
             Utils.AlertUser(e.getMessage());

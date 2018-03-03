@@ -10,6 +10,8 @@ import xmlcomponents.XMLElement;
 
 public class CreateOpenLink implements DialogController{
     @FXML
+    private TextField dueTime;
+    @FXML
     private TextField visibilityField;
 
     @FXML
@@ -40,6 +42,7 @@ public class CreateOpenLink implements DialogController{
         try {
             this.root.appendChild(
                     TCFactory.newOpenLink(
+                            dueTime.getText(),
                             visibilityField.getText()
                     )
             );

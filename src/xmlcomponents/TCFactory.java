@@ -26,44 +26,45 @@ public class TCFactory {
 
     private TCFactory(){}
 
-    public static XMLElement newOpenLink(String duration){
-        return new TCElement(new OpenLink(duration));
+    public static XMLElement newOpenLink(String time, String duration){
+        return new TCElement(new OpenLink(time, duration));
     }
 
-    public static XMLElement newSetLostCommTimer(String newLostTimer){
-        return new TCElement(new SetLostCommTimer(newLostTimer));
+    public static XMLElement newSetLostCommTimer(String time, String newLostTimer){
+        return new TCElement(new SetLostCommTimer(time, newLostTimer));
     }
 
-    public static XMLElement newChangeMode(OperatingModes mode){
-        return new TCElement(new ChangeMode(mode));
+    public static XMLElement newChangeMode(String time, OperatingModes mode){
+        return new TCElement(new ChangeMode(time, mode));
     }
 
-    public static XMLElement newChangeSamplingPeriod(AnalogSignalGroups g,
+    public static XMLElement newChangeSamplingPeriod(String time,
+                                                     AnalogSignalGroups g,
                                                      String newPeriod) {
-        return new TCElement(new ChangeSamplingPeriod(g, newPeriod));
+        return new TCElement(new ChangeSamplingPeriod(time, g, newPeriod));
     }
 
-    public static XMLElement newEnableDigitalSignal(StatusSignals s){
-        return new TCElement(new EnableDigitalSignal(s));
+    public static XMLElement newEnableDigitalSignal(String time, StatusSignals s){
+        return new TCElement(new EnableDigitalSignal(time, s));
     }
 
-    public static XMLElement newDisableDigitalSignal(StatusSignals s){
-        return new TCElement(new DisableDigitalSignal(s));
+    public static XMLElement newDisableDigitalSignal(String time, StatusSignals s){
+        return new TCElement(new DisableDigitalSignal(time, s));
     }
 
-    public static XMLElement newChangeADCSCalibrationParameters(List<List<String>> parameters){
-        return new TCElement(new ChangeADCSCalibrationParameters(parameters));
+    public static XMLElement newChangeADCSCalibrationParameters(String time, List<List<String>> parameters){
+        return new TCElement(new ChangeADCSCalibrationParameters(time, parameters));
     }
 
-    public static XMLElement newChangeADCSControllerParameters(List<List<String>> parameters){
-        return new TCElement(new ChangeADCSControllerParameters(parameters));
+    public static XMLElement newChangeADCSControllerParameters(String time, List<List<String>> parameters){
+        return new TCElement(new ChangeADCSControllerParameters(time, parameters));
     }
 
-    public static XMLElement newStartRWExperiment(RWTestTypes test, String parameter){
-        return new TCElement(new StartRWExperiment(test, parameter));
+    public static XMLElement newStartRWExperiment(String time, RWTestTypes test, String parameter){
+        return new TCElement(new StartRWExperiment(time, test, parameter));
     }
 
-    public static XMLElement newStartMTSExperiment(List<String> parameters){
-        return new TCElement(new StartMTSExperiment(parameters));
+    public static XMLElement newStartMTSExperiment(String time, List<String> parameters){
+        return new TCElement(new StartMTSExperiment(time, parameters));
     }
 }

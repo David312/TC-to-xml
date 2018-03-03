@@ -16,7 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CreateStartMTSExperiment implements DialogController{
-
+    @FXML
+    private TextField dueTime;
     @FXML
     private List<CheckBox> MTS_T;
     @FXML
@@ -51,7 +52,7 @@ public class CreateStartMTSExperiment implements DialogController{
             parameters.add(Boolean.toString(c.isSelected()));
 
         try{
-            this.root.appendChild(TCFactory.newStartMTSExperiment(parameters));
+            this.root.appendChild(TCFactory.newStartMTSExperiment(dueTime.getText(),parameters));
             this.dialogStage.close();
         }catch (IllegalArgumentException e){
             Utils.AlertUser(e.getMessage());
