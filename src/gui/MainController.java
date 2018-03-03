@@ -56,7 +56,6 @@ public class MainController {
     @FXML
     private void handleAdd(){
         Telecommands t = table.getSelectionModel().getSelectedItem();
-        System.out.println(t.toString());
         if(t != null){
             try {
                 showNewTCDialog(t);
